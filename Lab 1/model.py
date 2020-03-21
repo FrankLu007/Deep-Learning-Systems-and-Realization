@@ -6,7 +6,7 @@ class ImageNet(nn.Module):
 
     def __init__(self):
         super(ImageNet, self).__init__()
-        self.ImageNet = torchvision.models.wide_resnet101_2()
+        self.ImageNet = torchvision.models.wide_resnet50_2(pretrained = True)
         self.fc1 = nn.Linear(1000, 512)
         self.fc2 = nn.Linear(512, 128)
         self.fc3 = nn.Linear(128, 11)

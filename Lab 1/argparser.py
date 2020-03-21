@@ -1,6 +1,6 @@
 import sys
 
-args = {'gpu' : '0', 'epoch' : 100, 'learning_rate' : 0.01, 'batch_size' : 32, 'load' : None, 'save' : None, 'thread' : 1}
+args = {'gpu' : '0', 'epoch' : 100, 'learning_rate' : 0.01, 'batch_size' : 32, 'load' : None, 'save' : None, 'thread' : 1, 'log' : 'log.txt'}
 float_args = ['learning_rate']
 str_args = ['gpu', 'load', 'save']
 args_parse = 0 # 1 if args have been parsed
