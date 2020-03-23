@@ -12,7 +12,7 @@ if __name__ == '__main__' :
 	args = get_args()
 
 	transform_train = transforms.Compose([
-		transforms.Resize(512),
+		transforms.Resize((512, 512)),
 	    transforms.RandomCrop(256),
 	    transforms.RandomHorizontalFlip(),
 	    transforms.ColorJitter(0.5, 0.5, 0.5),
@@ -21,7 +21,7 @@ if __name__ == '__main__' :
 	])
 
 	transform_test = transforms.Compose([
-		transforms.Resize(256),
+		transforms.Resize((256, 256)),
 	    transforms.ToTensor(),
 	    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
 	])
@@ -46,33 +46,56 @@ if __name__ == '__main__' :
 	if args['load'] :
 		model = torch.load(args['load'])
 	else :
-		model = ImageNet()
+		model = ImageNet().cuda()
 
-	model.cuda()
 	criterion = nn.CrossEntropyLoss()
 	optimizer = optim.SGD(model.parameters(), lr = args['learning_rate'], momentum = 0.9)
 
 	print('Training :')
 
-	LastLoss = 100
+	avgloss = 0.0
+	avgcorrect = [0.0] * 11
+	cases = [0.0] * 11
+	lastaccuracy = 0
+
+	model.eval()
+	with torch.no_grad() :
+		for i, (inputs, labels) in enumerate(validationloader):
+			inputs = inputs.cuda()
+			labels = labels.cuda()
+			outputs = model(inputs)
+			tmp, pred = outputs.max(1)
+			loss = criterion(outputs, labels)
+			avgloss += loss.cpu().item()
+			for i in range(len(pred)) :
+				if pred[i] == labels[i] :
+					avgcorrect[labels[i]] += 1
+				cases[labels[i]] += 1
+
+			del outputs, inputs, labels, loss, pred, tmp
+
+	print('\tValidation : ' + '%.5lf'%(avgloss / sum(cases)) + ' / ' + '%.2f%%'%(sum(avgcorrect) / sum(cases) * 100))
+
+	for i in range(11) :
+		print('\t\tclass', '%2d'%i, '%5d'%cases[i], '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
+
+	lastaccuracy = sum(avgcorrect) / sum(cases)
 
 	if args['save'] :
 		torch.save(model, args['save'])
 
 	for epoch in range(args['epoch']):  # loop over the dataset multiple times
 	    
+		del avgcorrect, cases
 		avgloss = 0.0
 		avgcorrect = [0.0] * 11
 		cases = [0.0] * 11
 
 		print('\n\tEpoch : ' + str(epoch))
-	    
-		avgloss = 0.0
-		avgcorrect = [0.0] * 11
-		cases = [0.0] * 11
 
 		model.train()
 		for i, (inputs, labels) in enumerate(trainloader):
+			torch.cuda.empty_cache()
 			inputs = inputs.cuda() 
 			labels = labels.cuda()
 			optimizer.zero_grad()
@@ -98,6 +121,11 @@ if __name__ == '__main__' :
 			else :
 				print('\t\tclass', '%2d'%i, '%5d'%cases[i], '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
 
+		del avgcorrect, cases
+		avgloss = 0.0
+		avgcorrect = [0.0] * 11
+		cases = [0.0] * 11
+
 		model.eval()
 		with torch.no_grad() :
 			for i, (inputs, labels) in enumerate(validationloader):
@@ -115,27 +143,24 @@ if __name__ == '__main__' :
 				del outputs, inputs, labels, loss, pred, tmp
 
 		print('\tValidation : ' + '%.5lf'%(avgloss / sum(cases)) + ' / ' + '%.2f%%'%(sum(avgcorrect) / sum(cases) * 100))
-		with open(args['log'], 'a') as f :
-			f.write('Epoch ' + str(epoch) + '  '  + '%.5lf'%(avgloss / sum(cases)) + ' / ' + '%.2f%%'%(sum(avgcorrect) / sum(cases) * 100) + '\n')
 
 		for i in range(11) :
-			print('\t\tclass', '%2d'%i, '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
+			print('\t\tclass', '%2d'%i, '%5d'%cases[i], '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
 
-		if args['save'] and (avgloss / sum(cases)) < LastLoss:
-			LastLoss = (avgloss / sum(cases))
+		if args['save'] and sum(avgcorrect) / sum(cases) > lastaccuracy:
+			lastaccuracy = sum(avgcorrect) / sum(cases)
 			torch.save(model, args['save'])
-		elif args['save']:
-			model = torch.load(args['save'])
 
 	print('Testing :')
 
+	del avgcorrect, cases
 	avgloss = 0.0
 	avgcorrect = [0.0] * 11
 	cases = [0.0] * 11
 
 	model.eval()
 	with torch.no_grad() :
-		for i, (inputs, labels) in enumerate(validationloader):
+		for i, (inputs, labels) in enumerate(testloader):
 			inputs = inputs.cuda()
 			labels = labels.cuda()
 			outputs = model(inputs)
@@ -152,4 +177,4 @@ if __name__ == '__main__' :
 	print('\tTest : ' + '%.5lf'%(avgloss / sum(cases)) + ' / ' + '%.2f%%'%(sum(avgcorrect) / sum(cases) * 100))
     
 	for i in range(11) :
-		print('\t\tclass', '%2d'%i, '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
+		print('\t\tclass', '%2d'%i, '%5d'%cases[i], '%5.2f%%'%(avgcorrect[i] / cases[i] * 100))
