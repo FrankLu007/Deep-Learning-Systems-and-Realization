@@ -85,7 +85,7 @@ if __name__ == '__main__' :
 	    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
 	])
 	testset = torchvision.datasets.ImageFolder(root = 'C:\\Users\\Frank\\Downloads\\food11\\food11re\\food11re\\evaluation\\', transform = transform_test)
-	testloader = torch.utils.data.DataLoader(testset, batch_size = args['batch_size'], shuffle = False, num_workers = args['thread'])
+	testloader = torch.utils.data.DataLoader(testset, batch_size = 128, shuffle = False, num_workers = 10)
 
 	if args['load'] == None :
 		print('No weights to load.')
