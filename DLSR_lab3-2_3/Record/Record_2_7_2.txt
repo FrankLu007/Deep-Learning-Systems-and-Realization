@@ -1,0 +1,18 @@
+
+Program : train.py
+
+Argument :
+gpu                      0
+epoch                    100
+learning_rate            0.01
+batch_size               8
+load                     None
+save                     None
+d                        2
+w                        7
+r                        2
+
+Training :
+	Validation : 4.20% 0.000
+
+	Epoch : 0

@@ -1,0 +1,418 @@
+
+Program : train.py
+
+Argument :
+gpu                      0
+epoch                    100
+learning_rate            0.01
+batch_size               32
+load                     None
+save                     None
+d                        2
+w                        4
+r                        2
+
+Training :
+	Validation : 10.12% 0.000
+
+	Epoch : 0
+	Training : 14.34% 2.640
+	Validation : 5.83% 0.000
+
+	Epoch : 1
+	Training : 16.61% 2.302
+	Validation : 15.80% 0.000
+
+	Epoch : 2
+	Training : 18.61% 2.255
+	Validation : 13.88% 0.000
+
+	Epoch : 3
+	Training : 19.30% 2.186
+	Validation : 15.19% 0.000
+
+	Epoch : 4
+	Training : 20.24% 2.166
+	Validation : 17.43% 0.000
+
+	Epoch : 5
+	Training : 22.05% 2.108
+	Validation : 22.68% 0.000
+
+	Epoch : 6
+	Training : 27.12% 2.031
+	Validation : 21.60% 0.000
+
+	Epoch : 7
+	Training : 31.07% 1.936
+	Validation : 24.49% 0.000
+
+	Epoch : 8
+	Training : 34.84% 1.828
+	Validation : 27.38% 0.000
+
+	Epoch : 9
+	Training : 41.20% 1.685
+	Validation : 26.53% 0.000
+
+	Epoch : 10
+	Training : 46.63% 1.545
+	Validation : 31.75% 0.000
+
+	Epoch : 11
+	Training : 50.22% 1.427
+	Validation : 32.27% 0.000
+
+	Epoch : 12
+	Training : 55.07% 1.321
+	Validation : 30.96% 0.000
+
+	Epoch : 13
+	Training : 56.77% 1.246
+	Validation : 36.30% 0.000
+
+	Epoch : 14
+	Training : 61.01% 1.141
+	Validation : 39.36% 0.000
+
+	Epoch : 15
+	Training : 62.80% 1.072
+	Validation : 39.77% 0.000
+
+	Epoch : 16
+	Training : 64.72% 1.003
+	Validation : 41.28% 0.000
+
+	Epoch : 17
+	Training : 66.90% 0.943
+	Validation : 40.52% 0.000
+
+	Epoch : 18
+	Training : 69.53% 0.864
+	Validation : 45.34% 0.000
+
+	Epoch : 19
+	Training : 69.42% 0.886
+	Validation : 43.82% 0.000
+
+	Epoch : 20
+	Training : 70.16% 0.858
+	Validation : 43.03% 0.000
+
+	Epoch : 21
+	Training : 72.40% 0.805
+	Validation : 44.49% 0.000
+
+	Epoch : 22
+	Training : 75.56% 0.715
+	Validation : 41.66% 0.000
+
+	Epoch : 23
+	Training : 75.74% 0.714
+	Validation : 45.54% 0.000
+
+	Epoch : 24
+	Training : 76.30% 0.680
+	Validation : 46.01% 0.000
+
+	Epoch : 25
+	Training : 78.67% 0.620
+	Validation : 46.97% 0.000
+
+	Epoch : 26
+	Training : 81.61% 0.546
+	Validation : 46.91% 0.000
+
+	Epoch : 27
+	Training : 81.87% 0.536
+	Validation : 48.16% 0.000
+
+	Epoch : 28
+	Training : 82.99% 0.509
+	Validation : 47.81% 0.000
+
+	Epoch : 29
+	Training : 83.96% 0.474
+	Validation : 49.10% 0.000
+
+	Epoch : 30
+	Training : 85.47% 0.426
+	Validation : 48.16% 0.000
+
+	Epoch : 31
+	Training : 86.14% 0.405
+	Validation : 50.15% 0.000
+
+	Epoch : 32
+	Training : 86.72% 0.403
+	Validation : 50.61% 0.000
+
+	Epoch : 33
+	Training : 88.03% 0.361
+	Validation : 49.53% 0.000
+
+	Epoch : 34
+	Training : 89.01% 0.333
+	Validation : 51.55% 0.000
+
+	Epoch : 35
+	Training : 88.75% 0.338
+	Validation : 50.15% 0.000
+
+	Epoch : 36
+	Training : 88.97% 0.317
+	Validation : 50.76% 0.000
+
+	Epoch : 37
+	Training : 91.34% 0.260
+	Validation : 49.42% 0.000
+
+	Epoch : 38
+	Training : 91.32% 0.259
+	Validation : 51.28% 0.000
+
+	Epoch : 39
+	Training : 91.95% 0.245
+	Validation : 50.52% 0.000
+
+	Epoch : 40
+	Training : 91.86% 0.245
+	Validation : 48.63% 0.000
+
+	Epoch : 41
+	Training : 92.13% 0.235
+	Validation : 48.54% 0.000
+
+	Epoch : 42
+	Training : 93.45% 0.191
+	Validation : 50.26% 0.000
+
+	Epoch : 43
+	Training : 93.67% 0.194
+	Validation : 51.49% 0.000
+
+	Epoch : 44
+	Training : 93.91% 0.178
+	Validation : 50.41% 0.000
+
+	Epoch : 45
+	Training : 94.24% 0.177
+	Validation : 51.60% 0.000
+
+	Epoch : 46
+	Training : 94.68% 0.157
+	Validation : 52.19% 0.000
+
+	Epoch : 47
+	Training : 94.78% 0.155
+	Validation : 50.35% 0.000
+
+	Epoch : 48
+	Training : 95.52% 0.139
+	Validation : 51.22% 0.000
+
+	Epoch : 49
+	Training : 95.39% 0.137
+	Validation : 54.58% 0.000
+
+	Epoch : 50
+	Training : 95.60% 0.130
+	Validation : 51.69% 0.000
+
+	Epoch : 51
+	Training : 95.50% 0.133
+	Validation : 51.02% 0.000
+
+	Epoch : 52
+	Training : 96.05% 0.118
+	Validation : 50.35% 0.000
+
+	Epoch : 53
+	Training : 96.34% 0.108
+	Validation : 51.57% 0.000
+
+	Epoch : 54
+	Training : 96.79% 0.094
+	Validation : 50.03% 0.000
+
+	Epoch : 55
+	Training : 96.04% 0.112
+	Validation : 51.17% 0.000
+
+	Epoch : 56
+	Training : 96.97% 0.091
+	Validation : 49.91% 0.000
+
+	Epoch : 57
+	Training : 96.44% 0.102
+	Validation : 51.14% 0.000
+
+	Epoch : 58
+	Training : 96.60% 0.102
+	Validation : 50.64% 0.000
+
+	Epoch : 59
+	Training : 97.34% 0.079
+	Validation : 51.46% 0.000
+
+	Epoch : 60
+	Training : 97.52% 0.073
+	Validation : 52.01% 0.000
+
+	Epoch : 61
+	Training : 97.46% 0.076
+	Validation : 51.08% 0.000
+
+	Epoch : 62
+	Training : 98.07% 0.065
+	Validation : 50.96% 0.000
+
+	Epoch : 63
+	Training : 97.57% 0.070
+	Validation : 52.39% 0.000
+
+	Epoch : 64
+	Training : 98.11% 0.054
+	Validation : 52.65% 0.000
+
+	Epoch : 65
+	Training : 97.62% 0.068
+	Validation : 52.36% 0.000
+
+	Epoch : 66
+	Training : 98.16% 0.059
+	Validation : 51.66% 0.000
+
+	Epoch : 67
+	Training : 98.15% 0.059
+	Validation : 53.15% 0.000
+
+	Epoch : 68
+	Training : 98.81% 0.040
+	Validation : 52.97% 0.000
+
+	Epoch : 69
+	Training : 98.34% 0.049
+	Validation : 51.55% 0.000
+
+	Epoch : 70
+	Training : 98.49% 0.044
+	Validation : 51.11% 0.000
+
+	Epoch : 71
+	Training : 98.16% 0.054
+	Validation : 50.38% 0.000
+
+	Epoch : 72
+	Training : 98.60% 0.043
+	Validation : 52.36% 0.000
+
+	Epoch : 73
+	Training : 98.36% 0.053
+	Validation : 50.61% 0.000
+
+	Epoch : 74
+	Training : 98.37% 0.048
+	Validation : 51.69% 0.000
+
+	Epoch : 75
+	Training : 98.40% 0.044
+	Validation : 53.24% 0.000
+
+	Epoch : 76
+	Training : 98.96% 0.030
+	Validation : 53.94% 0.000
+
+	Epoch : 77
+	Training : 99.16% 0.027
+	Validation : 53.59% 0.000
+
+	Epoch : 78
+	Training : 99.23% 0.023
+	Validation : 52.27% 0.000
+
+	Epoch : 79
+	Training : 98.83% 0.037
+	Validation : 53.35% 0.000
+
+	Epoch : 80
+	Training : 98.90% 0.033
+	Validation : 53.15% 0.000
+
+	Epoch : 81
+	Training : 98.83% 0.032
+	Validation : 50.70% 0.000
+
+	Epoch : 82
+	Training : 99.33% 0.020
+	Validation : 52.36% 0.000
+
+	Epoch : 83
+	Training : 98.77% 0.031
+	Validation : 50.93% 0.000
+
+	Epoch : 84
+	Training : 98.96% 0.034
+	Validation : 49.62% 0.000
+
+	Epoch : 85
+	Training : 99.08% 0.028
+	Validation : 53.35% 0.000
+
+	Epoch : 86
+	Training : 99.41% 0.018
+	Validation : 52.51% 0.000
+
+	Epoch : 87
+	Training : 99.04% 0.028
+	Validation : 49.10% 0.000
+
+	Epoch : 88
+	Training : 98.94% 0.030
+	Validation : 53.24% 0.000
+
+	Epoch : 89
+	Training : 99.40% 0.017
+	Validation : 53.82% 0.000
+
+	Epoch : 90
+	Training : 99.77% 0.008
+	Validation : 54.26% 0.000
+
+	Epoch : 91
+	Training : 99.42% 0.020
+	Validation : 53.35% 0.000
+
+	Epoch : 92
+	Training : 98.97% 0.031
+	Validation : 51.63% 0.000
+
+	Epoch : 93
+	Training : 99.11% 0.027
+	Validation : 53.32% 0.000
+
+	Epoch : 94
+	Training : 99.52% 0.014
+	Validation : 53.03% 0.000
+
+	Epoch : 95
+	Training : 99.66% 0.012
+	Validation : 53.09% 0.000
+
+	Epoch : 96
+	Training : 99.10% 0.026
+	Validation : 52.51% 0.000
+
+	Epoch : 97
+	Training : 99.71% 0.011
+	Validation : 53.03% 0.000
+
+	Epoch : 98
+	Training : 99.31% 0.020
+	Validation : 48.13% 0.000
+
+	Epoch : 99
+	Training : 98.93% 0.028
+	Validation : 53.12% 0.000
+Testing :
+	Test : 55.96% 0.000

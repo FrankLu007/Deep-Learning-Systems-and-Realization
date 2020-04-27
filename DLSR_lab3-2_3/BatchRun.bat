@@ -1,0 +1,10 @@
+python train.py --batch_size 16 --d 4 --w 3 --r 3 > Record_4_3_3.txt
+python train.py --batch_size 16 --d 5 --w 3 --r 3 > Record_5_3_3.txt
+python train.py --batch_size 16 --d 6 --w 3 --r 3 > Record_6_3_3.txt
+python train.py --batch_size 16 --d 7 --w 3 --r 3 > Record_7_3_3.txt
+python train.py --batch_size 16 --d 8 --w 3 --r 3 > Record_8_3_3.txt
+python train.py --batch_size 16 --d 3 --w 3 --r 4 > Record_3_3_4.txt
+python train.py --batch_size 16 --d 3 --w 3 --r 5 > Record_3_3_5.txt
+python train.py --batch_size 16 --d 3 --w 3 --r 6 > Record_3_3_6.txt
+python train.py --batch_size 16 --d 3 --w 3 --r 7 > Record_3_3_7.txt
+python train.py --batch_size 16 --d 3 --w 3 --r 8 > Record_3_3_8.txt
