@@ -6,7 +6,7 @@ import torchvision
 import torchvision.transforms as transforms
 from model import ImageNet
 from argparser import get_args
-from dataloader import Food11Dataset, ImgAugTransform
+from dataloader import Food11Dataset#, ImgAugTransform
 
 def forward(name, dataloader, model, lossfunction = None, optimizer = None) :
 
@@ -61,7 +61,7 @@ if __name__ == '__main__' :
 
 	transform_train = transforms.Compose([
 		transforms.Resize((256, 256)),
-		ImgAugTransform(),
+		# ImgAugTransform(),
 	    transforms.ToTensor(),
 	    transforms.Normalize([0.4965, 0.3980, 0.3058], [0.3071, 0.2927, 0.2835]),
 	])
