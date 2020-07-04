@@ -137,7 +137,7 @@ if __name__ == '__main__' :
 	trainset = MuraDataset(TrainCsv, DataPath, transform_train)
 	validationset = MuraDataset(ValidCsv, DataPath, transform_test)
 
-	trainloader = torch.utils.data.DataLoader(trainset, batch_size = args['batch_size'], shuffle = False, num_workers = 8, drop_last = True, sampler = sampler)
+	trainloader = torch.utils.data.DataLoader(trainset, batch_size = args['batch_size'], shuffle = False, num_workers = 8)
 	validationloader = torch.utils.data.DataLoader(validationset, batch_size = 128, num_workers = 8)
 
 	model = None
